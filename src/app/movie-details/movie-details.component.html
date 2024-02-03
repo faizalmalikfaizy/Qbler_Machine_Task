@@ -1,0 +1,39 @@
+<div *ngIf="MovieDetails" class="movie-card">
+    <h2>{{ MovieDetails[0]?.Title }}</h2>
+    <img [src]="MovieDetails[0]?.Poster" alt="{{ MovieDetails[0]?.Title }} Poster" />
+
+
+    <div class="details-container">
+        <div class="left-column">
+            <p><strong>Year:</strong> {{ MovieDetails[0]?.Year }}</p>
+            <p><strong>Rated:</strong> {{ MovieDetails[0]?.Rated }}</p>
+            <p><strong>Released:</strong> {{ MovieDetails[0]?.Released }}</p>
+            <p><strong>Runtime:</strong> {{ MovieDetails[0]?.Runtime }}</p>
+            <p><strong>Genre:</strong> {{ MovieDetails[0]?.Genre }}</p>
+            <p><strong>Director:</strong> {{ MovieDetails[0]?.Director }}</p>
+            <p><strong>Writer:</strong> {{ MovieDetails[0]?.Writer }}</p>
+            <p><strong>Actors:</strong> {{ MovieDetails[0]?.Actors }}</p>
+            <p><strong>Plot:</strong> {{ MovieDetails[0]?.Plot }}</p>
+            <p><strong>Language:</strong> {{ MovieDetails[0]?.Language }}</p>
+            <p><strong>Country:</strong> {{ MovieDetails[0]?.Country }}</p>
+            <p><strong>Awards:</strong> {{ MovieDetails[0]?.Awards }}</p>
+            <p><strong>Ratings:</strong></p>
+            <ul>
+                <li *ngFor="let rating of MovieDetails[0]?.Ratings">
+                    {{ rating.Source }}: {{ rating.Value }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-column">
+            <p><strong>Metascore:</strong> {{ MovieDetails[0]?.Metascore }}</p>
+            <p><strong>IMDb Rating:</strong> {{ MovieDetails[0]?.imdbRating }}</p>
+            <p><strong>IMDb Votes:</strong> {{ MovieDetails[0]?.imdbVotes }}</p>
+            <p><strong>IMDb ID:</strong> {{ MovieDetails[0]?.imdbID }}</p>
+            <p><strong>Type:</strong> {{ MovieDetails[0]?.Type }}</p>
+            <p><strong>DVD:</strong> {{ MovieDetails[0]?.DVD }}</p>
+            <p><strong>Box Office:</strong> {{ MovieDetails[0]?.BoxOffice }}</p>
+            <p><strong>Production:</strong> {{ MovieDetails[0]?.Production }}</p>
+            <p><strong>Website:</strong> {{ MovieDetails[0]?.Website }}</p>
+        </div>
+    </div>

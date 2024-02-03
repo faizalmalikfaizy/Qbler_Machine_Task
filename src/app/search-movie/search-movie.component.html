@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="page-title">Search Your Favorites <span>M</span>ovies</h2>
+    <div class="search-bar">
+        <input type="text" [(ngModel)]="search_movie_name" placeholder="Search Movies">
+        <button (click)="SearchMoviesName()">Search</button>
+    </div>
+</div>
+
+<div class="search-results">
+    <h3>Results</h3>
+    <h3>{{ this.ErrorMessage }}</h3>
+    <div class="movie-grid" *ngIf="movieData.length > 0">
+        <div *ngFor="let Movies of movieData" class="movie-item">
+            <div routerLink="/Movie-Details" [queryParams]="{ id: Movies?.Title }">
+                <img [src]="Movies?.Poster" alt="{{ Movies?.Title }} Poster" />
+                <h4>{{ Movies?.Title }} ({{ Movies?.Year }})</h4>
+            </div>
+        </div>
+    </div>
+</div>

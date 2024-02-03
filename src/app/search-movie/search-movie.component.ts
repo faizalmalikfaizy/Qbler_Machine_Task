@@ -24,10 +24,16 @@ export class SearchMovieComponent implements OnInit {
       return;
     }
     this.Service.SearchMovies(this.search_movie_name).subscribe((response: any) => {
+      console.log("Movie Datil:", response)
       if (response) {
         this.movieData = response?.Search
+        console.log("Movie Datil:", this.movieData)
       }
     });
+  }
+
+  viewMovieDetails(imdbID: string) {
+    this.router.navigate(['Movie-Details', imdbID]);
   }
 
   ngOnInit(): void {}

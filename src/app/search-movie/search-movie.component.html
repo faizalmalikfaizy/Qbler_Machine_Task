@@ -10,11 +10,11 @@
     <h3>Results</h3>
     <h3>{{ this.ErrorMessage }}</h3>
     <div class="movie-grid" *ngIf="movieData.length > 0">
-        <div *ngFor="let Movies of movieData" class="movie-item">
-            <div routerLink="/Movie-Details" [queryParams]="{ id: Movies?.Title }">
+        <div *ngFor="let Movies of movieData" class="movie-item" (click)="viewMovieDetails(Movies.imdbID)">
+            <!-- <div routerLink="/Movie-Details" [queryParams]="{ id: Movies?.Title }"> -->
                 <img [src]="Movies?.Poster" alt="{{ Movies?.Title }} Poster" />
                 <h4>{{ Movies?.Title }} ({{ Movies?.Year }})</h4>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>

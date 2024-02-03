@@ -26,7 +26,6 @@ export class SearchMovieComponent implements OnInit {
     this.Service.SearchMovies(this.search_movie_name).subscribe((response: any) => {
       if (response) {
         this.movieData = response?.Search
-        console.log("Movies :", this.movieData);
       }
     });
   }

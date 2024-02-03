@@ -19,7 +19,4 @@ export class ServiceService {
     return this.http.get(`${this.ApiBaseUrl}?t=${titleNmae}&apikey=${this.ApiBaseKey}`);
   }
 
-  // MovieDetails(id: string) {
-  //   return this.http.get(`${this.ApiBaseUrl}?t=${id}&apikey=${this.ApiBaseKey}`);
-  // }
 }

@@ -18,15 +18,12 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.idTitle = params['id'];
-      console.log("idTitle=", this.idTitle)
     })
 
     this.Service.MovieDetails(this.idTitle).subscribe((response: any) => {
-      console.log("response :", response);
       if (response) {
         var Deatils = response
         this.MovieDetails.push(Deatils)
-        console.log("Movie Deatils :", this.MovieDetails);
       }
     });
   }

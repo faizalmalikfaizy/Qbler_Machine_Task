@@ -12,7 +12,7 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(private Service: ServiceService, private route: ActivatedRoute) { }
 
-  idTitle: any
+  // idTitle: any
   MovieDetails: any[] = [];
   Details : any
 
